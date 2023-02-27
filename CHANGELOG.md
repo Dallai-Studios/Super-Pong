@@ -18,3 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Gameplay countdown animations
 - Score system
 - Game core loop event system
+
+### Fixes
+- Fixed a small bug on the racket and ball colliders when the ball is too fast
+- Added a new collider on the walls to reduce the possibility of 'fall ball'
