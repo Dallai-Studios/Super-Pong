@@ -1,8 +1,8 @@
-﻿using System;
-using DallaiStudios.SuperPong.Enums;
+﻿using DallaiStudios.SuperPong.Enums;
 using DallaiStudios.SuperPong.Managers;
 using DallaiStudios.SuperPong.ScriptableObjects;
 using DallaiStudios.SuperPong.Types;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,23 +17,31 @@ namespace DallaiStudios.SuperPong.Behaviors
     {
         [Header("Define the game configurations")]
         [SerializeField] private GameConfiguration gameConfiguration;
-
+        
+        [Space]
+        
         [Header("Define the main menu attributes")]
         [SerializeField] private GameObject mainMenuUI;
         [SerializeField] private Button playButton;
         [SerializeField] private Button optionsButton;
         [SerializeField] private Button quitButton;
 
+        [Space]
+
         [Header("Define the play menu attributes")]
         [SerializeField] private GameObject playMenuUI;
         [SerializeField] private Button playWithAIButton;
         [SerializeField] private Button playWithPlayerButton;
+
+        [Space]
 
         [Header("Define the difficult choose menu attributes")]
         [SerializeField] private GameObject gameDifficultMenuUI;
         [SerializeField] private Button normalDifficultButton;
         [SerializeField] private Button hardDifficultButton;
         [SerializeField] private Button unfairDifficultButton;
+
+        [Space]
 
         [Header("Define the options menu attributes")]
         [SerializeField] private GameObject optionsUI;
@@ -42,19 +50,37 @@ namespace DallaiStudios.SuperPong.Behaviors
         [SerializeField] private Button controlsButton;
         [SerializeField] private Button returnFromOptionsButton;
 
+        [Space]
+
         [Header("Define the controls menu attributes")]
         [SerializeField] private GameObject controlsMenuUI;
         [SerializeField] private Button returnFromControlsButton;
+
+        [Space]
 
         [Header("Define the quit menu attributes")]
         [SerializeField] private GameObject confirmExitUI;
         [SerializeField] private Button quitYesButton;
         [SerializeField] private Button quitNoButton;
 
+        [Space]
+
+        [Header("Define the version water mark")] 
+        [SerializeField] private TMP_Text versionWaterMark;
+        [SerializeField] private string versionVariableName;
+
         private void Start()
         {
+            this.GetApplicationVersion();
             this.SetupButtons();
             this.OpenMainMenu();
+        }
+
+        private void GetApplicationVersion()
+        {
+            string version = Application.version;
+            string newText = this.versionWaterMark.text.Replace(this.versionVariableName, version);
+            this.versionWaterMark.text = newText;
         }
         
         /// <summary>
