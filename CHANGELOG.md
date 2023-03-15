@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixes
+- Fixed a bug on the walls colliders that was softlocking the player
+- Fixed some 3d models that was not static, making batch calls more expensive
+
 ## [1.0.0] (27-02-2023)
 
 ### Added
